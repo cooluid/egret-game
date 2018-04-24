@@ -207,10 +207,10 @@ var ViewManager = (function (_super) {
         var view = this.closeEasy(key, param);
         if (view) {
             this.checkCloseView();
-            // DebugUtils.log("成功关闭窗口" + key);
+            DebugUtils.log("成功关闭窗口" + key);
         }
         else {
-            // DebugUtils.log("窗口不存在" + key);
+            DebugUtils.log("窗口不存在" + key);
         }
     };
     //简单关闭一个窗口

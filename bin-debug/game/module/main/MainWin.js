@@ -16,10 +16,12 @@ var MainWin = (function (_super) {
         return _this;
     }
     MainWin.prototype.childrenCreated = function () {
+        var _this = this;
         _super.prototype.childrenCreated.call(this);
         this.addTouchEvent(this.btnStart, function () {
-            // ViewManager.ins().close(this);
-            Jump.ins().initGame();
+            ViewManager.ins().close(_this);
+            // Jump.ins().initGame();
+            ViewManager.ins().open(NostopWin);
         });
     };
     return MainWin;

@@ -214,3 +214,4 @@ window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
 window['Stone'] = Stone;
+window['isDebug'] = true;

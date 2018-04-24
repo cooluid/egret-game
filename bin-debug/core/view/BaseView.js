@@ -59,7 +59,7 @@ var BaseView = (function (_super) {
                     obj.$onClose();
                 }
                 else if (obj instanceof egret.DisplayObjectContainer) {
-                    arguments.callee(obj);
+                    // arguments.callee(obj);
                 }
                 else if (obj["$onClose"]) {
                     obj["$onClose"]();

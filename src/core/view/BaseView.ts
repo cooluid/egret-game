@@ -58,7 +58,7 @@ class BaseView extends eui.Component {
 					(<BaseView>obj).$onClose();
 				}
 				else if (obj instanceof egret.DisplayObjectContainer) {
-					arguments.callee(obj);
+					// arguments.callee(obj);
 				}
 				else if(obj["$onClose"]){
 					obj["$onClose"]();

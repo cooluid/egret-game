@@ -207,9 +207,9 @@ class ViewManager extends BaseClass {
 		let view: BaseEuiView = this.closeEasy(key, param);
 		if (view) {
 			this.checkCloseView();
-			// DebugUtils.log("成功关闭窗口" + key);
+			DebugUtils.log("成功关闭窗口" + key);
 		} else {
-			// DebugUtils.log("窗口不存在" + key);
+			DebugUtils.log("窗口不存在" + key);
 		}
 	}
 
