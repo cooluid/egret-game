@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FrameSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="mapGrp" height="930" width="580" x="0">
+	</e:Group>
+	<e:Group id="Grp" y="-1804" left="0" right="0">
+		<e:Image id="imgLeft1" left="0" y="0" source="leaf_left_png"/>
+		<e:Image id="imgRight1" source="leaf_right_png" right="0" y="0"/>
+		<e:Image id="imgLeft2" left="0" y="10" source="leaf_left_png" x="10"/>
+		<e:Image id="imgRight2" source="leaf_right_png" right="0" y="10" x="10"/>
+	</e:Group>
+</e:Skin>
