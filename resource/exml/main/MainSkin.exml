@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="MainSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image id="imgBg" horizontalCenter="0" verticalCenter="0" source="main"/>
+	<e:Image id="imgBg" horizontalCenter="0" verticalCenter="0" source="mainres_json.main"/>
 	<e:Button id="btnStart" label="开始游戏" skinName="Button_01" width="164" horizontalCenter="0" bottom="50" height="109"/>
 </e:Skin>

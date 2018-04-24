@@ -1,0 +1,4 @@
+class NostopEndWin {
+	public constructor() {
+	}
+}

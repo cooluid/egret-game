@@ -1,42 +1,27 @@
 {
-	"resources": [
-		{
-			"name": "config_json",
-			"type": "json",
-			"url": "config/config.json"
-		},
-		{
-			"name": "test_json",
-			"type": "json",
-			"url": "config/test.json"
-		},
-		{
-			"name": "jump_json",
-			"type": "sheet",
-			"url": "exml/jump/jump.json",
-			"subkeys": "img_5,img_0,img_1,img_2,img_3,img_4"
-		},
-		{
-			"name": "leaf_left_png",
-			"type": "image",
-			"url": "exml/jump/leaf_left.png"
-		},
-		{
-			"name": "leaf_right_png",
-			"type": "image",
-			"url": "exml/jump/leaf_right.png"
-		},
-		{
-			"name": "mainres_json",
-			"type": "sheet",
-			"url": "exml/main/mainres.json",
-			"subkeys": "main,guide-dialogbox,shade-01b,tip-bg,page-arrow,icon-gem,i-gem"
-		}
-	],
 	"groups": [
 		{
-			"name": "preload",
-			"keys": "config_json,test_json,jump_json,leaf_left_png,leaf_right_png,mainres_json"
+			"keys": "config_json,common_json",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/config.json",
+			"type": "json",
+			"name": "config_json"
+		},
+		{
+			"url": "assets/common.json",
+			"type": "sheet",
+			"name": "common_json",
+			"subkeys": "king"
+		},
+		{
+			"url": "exml/main/mainres.json",
+			"type": "sheet",
+			"name": "mainres_json",
+			"subkeys": "guide-dialogbox,i-gem,icon-gem,main,page-arrow,shade-01b,tip-bg"
 		}
 	]
 }

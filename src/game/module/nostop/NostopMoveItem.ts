@@ -1,0 +1,4 @@
+class NostopMoveItem {
+	public constructor() {
+	}
+}

@@ -11,7 +11,8 @@ class MainWin extends BaseEuiView {
 
 		this.addTouchEvent(this.btnStart, () => {
 			// ViewManager.ins().close(this);
-			Jump.ins().initGame();
+			// Jump.ins().initGame();
+			ViewManager.ins().open(NostopWin);
 		});
 	}
 }
