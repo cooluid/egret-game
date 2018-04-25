@@ -71,5 +71,23 @@
     {
       "id": 234
     }
+  ],
+  "NostopConf": [
+    {
+      "id": 1,
+      "moveType": 1,
+      "speed": 1,
+      "img": "",
+      "interval": 1,
+      "addCnt": 5
+    },
+    {
+      "id": 2,
+      "moveType": 1,
+      "speed": 1,
+      "img": "",
+      "interval": 1,
+      "addCnt": 5
+    }
   ]
 }

@@ -13,6 +13,12 @@ var NostopWin = (function (_super) {
     function NostopWin() {
         var _this = _super.call(this) || this;
         _this.skinName = 'NostopWinSkin';
+        var conf = GlobalConfig.getNostopConfByIndex(1);
+        DebugUtils.log(conf);
+        _this.addTouchEvent(_this, function () {
+            ViewManager.ins().close(_this);
+            ViewManager.ins().open(NostopPlayerWin);
+        });
         return _this;
     }
     return NostopWin;

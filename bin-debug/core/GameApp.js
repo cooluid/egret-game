@@ -5,10 +5,9 @@ var GameApp = (function () {
     function GameApp() {
         // ReportData.getIns().report('loaded');
         //全局配置数据
-        GlobalConfig.init();
-        // for (let i in ComplieClass) {
-        // 	ComplieClass[i]();
-        // }
+        GlobalConfig.init(function () {
+            DebugUtils.log("\u914D\u8868\u89E3\u6790\u6210\u529F");
+        });
         for (var i in GameSystem) {
             GameSystem[i]();
         }

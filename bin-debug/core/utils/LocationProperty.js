@@ -239,7 +239,8 @@ var LocationProperty = (function () {
      * 设置加载进度 & 描述
      */
     LocationProperty.setLoadProgress = function (n, str) {
-        window['showLoadProgress'](n, str);
+        // window['showLoadProgress'](n, str);
+        DebugUtils.log(n + ", " + str);
     };
     return LocationProperty;
 }());

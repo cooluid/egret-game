@@ -4,11 +4,9 @@ class GameApp {
 		// ReportData.getIns().report('loaded');
 
 		//全局配置数据
-		GlobalConfig.init();
-
-		// for (let i in ComplieClass) {
-		// 	ComplieClass[i]();
-		// }
+		GlobalConfig.init(() => {
+			DebugUtils.log(`配表解析成功`);
+		});
 
 		for (let i in GameSystem) {
 			GameSystem[i]();

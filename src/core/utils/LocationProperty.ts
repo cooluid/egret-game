@@ -167,6 +167,7 @@ class LocationProperty {
 	 * 设置加载进度 & 描述
 	 */
 	static setLoadProgress(n: number, str: string): void {
-		window['showLoadProgress'](n, str);
+		// window['showLoadProgress'](n, str);
+		DebugUtils.log(`${n}, ${str}`)
 	}
 }

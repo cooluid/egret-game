@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "config_json,common_json",
+			"keys": "config_json,common2_json",
 			"name": "preload"
 		}
 	],
@@ -12,16 +12,16 @@
 			"name": "config_json"
 		},
 		{
-			"url": "assets/common.json",
-			"type": "sheet",
-			"name": "common_json",
-			"subkeys": "king"
-		},
-		{
 			"url": "exml/main/mainres.json",
 			"type": "sheet",
 			"name": "mainres_json",
 			"subkeys": "guide-dialogbox,i-gem,icon-gem,main,page-arrow,shade-01b,tip-bg"
+		},
+		{
+			"url": "assets/common.json",
+			"type": "sheet",
+			"name": "common2_json",
+			"subkeys": "king"
 		}
 	]
 }
