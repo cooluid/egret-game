@@ -23,7 +23,7 @@ var NostopPlayerWin = (function (_super) {
         //创建主角色移动
         this.mainPlayer = this.mainPlayer || new NostopMainItem();
         this.mainPlayer.x = this.width / 2;
-        this.mainPlayer.y = this.height / 2;
+        this.mainPlayer.y = this.height - this.mainPlayer.height - 300;
         this.addChild(this.mainPlayer);
     };
     return NostopPlayerWin;

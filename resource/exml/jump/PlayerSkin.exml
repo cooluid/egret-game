@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="PlayerSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="105" height="105">
-	<e:Group id="mcGrp" left="0" top="0"/>
-</e:Skin>

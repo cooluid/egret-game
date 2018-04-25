@@ -12,6 +12,14 @@
             {
                 "configPath": "resource/exml/main/mainres.json",
                 "relativePath": "resource/"
+            },
+            {
+                "configPath": "resource/exml/main/mainres.json",
+                "relativePath": "resource/"
+            },
+            {
+                "configPath": "resource/default.res.json",
+                "relativePath": "resource/"
             }
         ]
     },
