@@ -1,0 +1,8 @@
+{"file":"mainres.png","frames":{
+"main":{"x":0,"y":0,"w":640,"h":1024,"offX":0,"offY":0,"sourceW":640,"sourceH":1024},
+"guide-dialogbox":{"x":0,"y":1026,"w":640,"h":249,"offX":0,"offY":0,"sourceW":640,"sourceH":250},
+"shade-01b":{"x":0,"y":1422,"w":186,"h":186,"offX":19,"offY":19,"sourceW":224,"sourceH":224},
+"tip-bg":{"x":0,"y":1277,"w":640,"h":143,"offX":0,"offY":0,"sourceW":640,"sourceH":146},
+"page-arrow":{"x":0,"y":1740,"w":33,"h":54,"offX":1,"offY":0,"sourceW":34,"sourceH":54},
+"icon-gem":{"x":0,"y":1796,"w":44,"h":33,"offX":0,"offY":7,"sourceW":44,"sourceH":44},
+"i-gem":{"x":0,"y":1610,"w":128,"h":128,"offX":0,"offY":0,"sourceW":128,"sourceH":128}}}

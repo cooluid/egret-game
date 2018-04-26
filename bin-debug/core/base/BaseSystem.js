@@ -71,3 +71,4 @@ var BaseSystem = (function (_super) {
     return BaseSystem;
 }(BaseClass));
 __reflect(BaseSystem.prototype, "BaseSystem");
+//# sourceMappingURL=BaseSystem.js.map

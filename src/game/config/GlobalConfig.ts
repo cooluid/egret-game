@@ -25,7 +25,7 @@ class GlobalConfig {
 	}
 
 	private static loadConfByUrl(callBack: Function, cnt: number = 0) {
-		let url = `resource/cfg/congfig.json`;
+		let url = `resource/config/congfig.json`;
 		let dir = ResVersionManager.ins().getDir(url);
 		LocationProperty.setLoadProgress(85, `加载游戏配置文件(v${cnt})`);
 		RES.getResByUrl(`${LocationProperty.resAdd}${dir}/${url}?v=${cnt}`, (data) => {

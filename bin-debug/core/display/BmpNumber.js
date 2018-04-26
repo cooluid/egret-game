@@ -84,3 +84,4 @@ var BmpNumber = (function (_super) {
     return BmpNumber;
 }(egret.DisplayObjectContainer));
 __reflect(BmpNumber.prototype, "BmpNumber");
+//# sourceMappingURL=BmpNumber.js.map

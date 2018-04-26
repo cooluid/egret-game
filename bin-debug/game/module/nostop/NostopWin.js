@@ -25,3 +25,4 @@ var NostopWin = (function (_super) {
 }(BaseEuiView));
 __reflect(NostopWin.prototype, "NostopWin");
 ViewManager.ins().reg(NostopWin, LayerManager.UI_Main);
+//# sourceMappingURL=NostopWin.js.map

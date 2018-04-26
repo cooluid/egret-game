@@ -105,3 +105,4 @@ var ResVersionManager = (function (_super) {
     return ResVersionManager;
 }(BaseClass));
 __reflect(ResVersionManager.prototype, "ResVersionManager");
+//# sourceMappingURL=ResVersionManager.js.map

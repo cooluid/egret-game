@@ -59,3 +59,4 @@ var CRC16 = (function () {
     return CRC16;
 }());
 __reflect(CRC16.prototype, "CRC16");
+//# sourceMappingURL=CRC16.js.map

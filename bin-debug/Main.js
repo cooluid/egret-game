@@ -74,7 +74,9 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.resUrl = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
+        return _this;
     }
     Main.prototype.createChildren = function () {
         _super.prototype.createChildren.call(this);
@@ -87,6 +89,7 @@ var Main = (function (_super) {
         egret.lifecycle.onResume = function () {
             egret.ticker.resume();
         };
+        egret.ImageLoader.crossOrigin = 'anonymous';
         //inject the custom material parser
         //注入自定义的素材解析器
         var assetAdapter = new AssetAdapter();
@@ -118,7 +121,7 @@ var Main = (function (_super) {
                         _a.trys.push([0, 4, , 5]);
                         loadingView = new LoadingUI();
                         this.stage.addChild(loadingView);
-                        return [4 /*yield*/, RES.loadConfig("http://0.0.0.0:8000/resource/default.res.json", "/")];
+                        return [4 /*yield*/, RES.loadConfig(this.resUrl + "/resource/default.res.json", this.resUrl + "/resource/")];
                     case 1:
                         _a.sent();
                         return [4 /*yield*/, this.loadTheme()];
@@ -143,7 +146,7 @@ var Main = (function (_super) {
         return new Promise(function (resolve, reject) {
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            var theme = new eui.Theme("http://0.0.0.0:8000/resource/default.thm.json", _this.stage);
+            var theme = new eui.Theme("/resource/default.thm.json", _this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, function () {
                 resolve();
             }, _this);
@@ -260,3 +263,4 @@ window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
 window['Stone'] = Stone;
 window['isDebug'] = true;
+//# sourceMappingURL=Main.js.map

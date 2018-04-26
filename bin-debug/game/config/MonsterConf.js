@@ -7,3 +7,4 @@ var MonsterConf = (function () {
     return MonsterConf;
 }());
 __reflect(MonsterConf.prototype, "MonsterConf");
+//# sourceMappingURL=MonsterConf.js.map

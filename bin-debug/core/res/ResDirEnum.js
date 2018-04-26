@@ -7,3 +7,4 @@ var RES_DIR_BODY = RES_DIR + "body/";
 var RES_DIR_EFF = RES_DIR + "eff/";
 var RES_DIR_ITEM = RES_DIR + "item/";
 var RES_DIR_MONSTER = RES_DIR + "monster/";
+//# sourceMappingURL=ResDirEnum.js.map

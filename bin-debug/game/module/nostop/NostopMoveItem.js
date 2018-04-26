@@ -7,3 +7,4 @@ var NostopMoveItem = (function () {
     return NostopMoveItem;
 }());
 __reflect(NostopMoveItem.prototype, "NostopMoveItem");
+//# sourceMappingURL=NostopMoveItem.js.map

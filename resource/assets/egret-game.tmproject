@@ -1,0 +1,14 @@
+{
+    "projectName": "egret-game",
+    "version": 5,
+    "files": [
+        "../../../../../../../Pictures/我的灵感.library/images/1250bde0-5137-f0eb-8c4b-4d30f6862b5f.info/king.png"
+    ],
+    "options": {
+        "sizeMode": "free",
+        "useExtension": 0,
+        "layoutGap": 1,
+        "extend": 0,
+        "layoutMath": "0"
+    }
+}

@@ -48,3 +48,4 @@ var GameByteArray = (function (_super) {
     return GameByteArray;
 }(egret.ByteArray));
 __reflect(GameByteArray.prototype, "GameByteArray");
+//# sourceMappingURL=GameByteArray.js.map

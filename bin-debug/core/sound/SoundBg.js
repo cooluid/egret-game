@@ -82,3 +82,4 @@ var SoundBg = (function (_super) {
     return SoundBg;
 }(BaseSound));
 __reflect(SoundBg.prototype, "SoundBg");
+//# sourceMappingURL=SoundBg.js.map

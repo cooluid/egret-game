@@ -35,3 +35,4 @@ var TipsControl = (function (_super) {
     return TipsControl;
 }(BaseClass));
 __reflect(TipsControl.prototype, "TipsControl");
+//# sourceMappingURL=TipsControl.js.map

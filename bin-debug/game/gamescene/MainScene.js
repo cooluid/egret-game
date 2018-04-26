@@ -40,3 +40,4 @@ var MainScene = (function (_super) {
     return MainScene;
 }(BaseScene));
 __reflect(MainScene.prototype, "MainScene");
+//# sourceMappingURL=MainScene.js.map

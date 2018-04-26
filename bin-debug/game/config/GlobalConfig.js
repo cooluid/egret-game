@@ -29,7 +29,7 @@ var GlobalConfig = (function () {
     GlobalConfig.loadConfByUrl = function (callBack, cnt) {
         var _this = this;
         if (cnt === void 0) { cnt = 0; }
-        var url = "resource/cfg/congfig.json";
+        var url = "resource/config/congfig.json";
         var dir = ResVersionManager.ins().getDir(url);
         LocationProperty.setLoadProgress(85, "\u52A0\u8F7D\u6E38\u620F\u914D\u7F6E\u6587\u4EF6(v" + cnt + ")");
         RES.getResByUrl("" + LocationProperty.resAdd + dir + "/" + url + "?v=" + cnt, function (data) {
@@ -67,3 +67,4 @@ var GlobalConfig = (function () {
     return GlobalConfig;
 }());
 __reflect(GlobalConfig.prototype, "GlobalConfig");
+//# sourceMappingURL=GlobalConfig.js.map

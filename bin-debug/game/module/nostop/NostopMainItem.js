@@ -18,3 +18,4 @@ var NostopMainItem = (function (_super) {
     return NostopMainItem;
 }(BaseView));
 __reflect(NostopMainItem.prototype, "NostopMainItem");
+//# sourceMappingURL=NostopMainItem.js.map

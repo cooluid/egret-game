@@ -45,6 +45,8 @@ class Main extends eui.UILayer {
             egret.ticker.resume();
         }
 
+        egret.ImageLoader.crossOrigin = 'anonymous';
+
         //inject the custom material parser
         //注入自定义的素材解析器
         let assetAdapter = new AssetAdapter();
@@ -69,11 +71,13 @@ class Main extends eui.UILayer {
 
     }
 
+    //设定加载外部资源
+    private resUrl: string = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
     private async loadResource() {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await RES.loadConfig("http://0.0.0.0:8000/resource/default.res.json", "/");
+            await RES.loadConfig(`${this.resUrl}/resource/default.res.json`, `${this.resUrl}/resource/`);
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
@@ -87,7 +91,7 @@ class Main extends eui.UILayer {
         return new Promise((resolve, reject) => {
             // load skin theme configuration file, you can manually modify the file. And replace the default skin.
             //加载皮肤主题配置文件,可以手动修改这个文件。替换默认皮肤。
-            let theme = new eui.Theme("http://0.0.0.0:8000/resource/default.thm.json", this.stage);
+            let theme = new eui.Theme(`/resource/default.thm.json`, this.stage);
             theme.addEventListener(eui.UIEvent.COMPLETE, () => {
                 resolve();
             }, this);

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NostopWinSkin" width="640" height="1024" xmlns:e="http://ns.egret.com/eui">
+	<e:Image scale9Grid="80,50,480,141" left="0" right="0" top="0" bottom="0" source="mainres_json.guide-dialogbox"/>
+</e:Skin>

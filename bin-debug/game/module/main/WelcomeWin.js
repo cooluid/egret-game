@@ -29,3 +29,4 @@ var WelcomeWin = (function (_super) {
 }(BaseEuiView));
 __reflect(WelcomeWin.prototype, "WelcomeWin");
 ViewManager.ins().reg(WelcomeWin, LayerManager.UI_Main);
+//# sourceMappingURL=WelcomeWin.js.map

@@ -367,3 +367,4 @@ var GameSocket = (function () {
     return GameSocket;
 }());
 __reflect(GameSocket.prototype, "GameSocket");
+//# sourceMappingURL=GameSocket.js.map

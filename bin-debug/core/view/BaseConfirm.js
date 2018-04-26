@@ -20,3 +20,4 @@ var BaseConfirm = (function (_super) {
     return BaseConfirm;
 }(BaseView));
 __reflect(BaseConfirm.prototype, "BaseConfirm");
+//# sourceMappingURL=BaseConfirm.js.map

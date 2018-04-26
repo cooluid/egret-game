@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="WelcomeSkin" width="580" height="930" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="imgTest" horizontalCenter="0" verticalCenter="0"/>
+	<e:Label id="labTip" text="点击任意地方继续" horizontalCenter="0" size="20" textColor="0xd8bc13" fontFamily="SimHei" bottom="50"/>
+</e:Skin>

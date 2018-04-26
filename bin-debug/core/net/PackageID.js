@@ -9,3 +9,4 @@ var PackageID;
     /** 移动系统 */
     PackageID.Move = 1;
 })(PackageID || (PackageID = {}));
+//# sourceMappingURL=PackageID.js.map

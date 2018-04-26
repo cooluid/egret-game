@@ -7,3 +7,4 @@ var NostopEndWin = (function () {
     return NostopEndWin;
 }());
 __reflect(NostopEndWin.prototype, "NostopEndWin");
+//# sourceMappingURL=NostopEndWin.js.map

@@ -23,3 +23,4 @@ var FrameTick = (function () {
     return FrameTick;
 }());
 __reflect(FrameTick.prototype, "FrameTick");
+//# sourceMappingURL=FrameTick.js.map

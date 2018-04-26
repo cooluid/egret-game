@@ -31,3 +31,4 @@ var Player = (function (_super) {
     return Player;
 }(BaseView));
 __reflect(Player.prototype, "Player");
+//# sourceMappingURL=Player.js.map

@@ -28,3 +28,4 @@ var MainWin = (function (_super) {
 }(BaseEuiView));
 __reflect(MainWin.prototype, "MainWin");
 ViewManager.ins().reg(MainWin, LayerManager.UI_Main);
+//# sourceMappingURL=MainWin.js.map
