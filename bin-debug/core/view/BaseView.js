@@ -29,6 +29,9 @@ var BaseView = (function (_super) {
     BaseView.prototype.addTouchEvent = function (obj, func) {
         this.addEvent(egret.TouchEvent.TOUCH_TAP, obj, func);
     };
+    BaseView.prototype.addTouchBeginEvent = function (obj, func) {
+        this.addEvent(egret.TouchEvent.TOUCH_BEGIN, obj, func);
+    };
     BaseView.prototype.addTouchEndEvent = function (obj, func) {
         this.addEvent(egret.TouchEvent.TOUCH_END, obj, func);
     };

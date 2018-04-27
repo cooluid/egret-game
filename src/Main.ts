@@ -77,7 +77,7 @@ class Main extends eui.UILayer {
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await RES.loadConfig(`${this.resUrl}/resource/default.res.json`, `${this.resUrl}/resource/`);
+            await RES.loadConfig(`${this.resUrl}/resource/default.res.json` + `?v=${Math.random()}`, `${this.resUrl}/resource/`);
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);
@@ -217,5 +217,5 @@ class Main extends eui.UILayer {
 window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
-window['Stone'] = Stone;
+window['NostopMoveItem'] = NostopMoveItem;
 window['isDebug'] = true;

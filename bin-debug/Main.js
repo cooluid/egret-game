@@ -75,6 +75,7 @@ var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
+        //设定加载外部资源
         _this.resUrl = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
         return _this;
     }
@@ -121,7 +122,7 @@ var Main = (function (_super) {
                         _a.trys.push([0, 4, , 5]);
                         loadingView = new LoadingUI();
                         this.stage.addChild(loadingView);
-                        return [4 /*yield*/, RES.loadConfig(this.resUrl + "/resource/default.res.json", this.resUrl + "/resource/")];
+                        return [4 /*yield*/, RES.loadConfig(this.resUrl + "/resource/default.res.json" + ("?v=" + Math.random()), this.resUrl + "/resource/")];
                     case 1:
                         _a.sent();
                         return [4 /*yield*/, this.loadTheme()];
@@ -261,6 +262,6 @@ __reflect(Main.prototype, "Main");
 window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
-window['Stone'] = Stone;
+window['NostopMoveItem'] = NostopMoveItem;
 window['isDebug'] = true;
 //# sourceMappingURL=Main.js.map

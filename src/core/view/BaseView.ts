@@ -10,7 +10,7 @@ class BaseView extends eui.Component {
 		MessageCenter.addListener(func, myfunc, this, callobj);
 	}
 
-	public removeObserveOne(func:any, myfunc:Function){
+	public removeObserveOne(func: any, myfunc: Function) {
 		MessageCenter.ins().removeListener(func.funcallname, myfunc, this);
 	}
 
@@ -20,6 +20,10 @@ class BaseView extends eui.Component {
 
 	public addTouchEvent(obj: any, func: Function) {
 		this.addEvent(egret.TouchEvent.TOUCH_TAP, obj, func);
+	}
+
+	public addTouchBeginEvent(obj: any, func: Function) {
+		this.addEvent(egret.TouchEvent.TOUCH_BEGIN, obj, func);
 	}
 
 	public addTouchEndEvent(obj: any, func: Function) {
@@ -60,7 +64,7 @@ class BaseView extends eui.Component {
 				else if (obj instanceof egret.DisplayObjectContainer) {
 					// arguments.callee(obj);
 				}
-				else if(obj["$onClose"]){
+				else if (obj["$onClose"]) {
 					obj["$onClose"]();
 				}
 			}
@@ -77,21 +81,21 @@ class BaseView extends eui.Component {
 		super.setSkinPart(partName, instance);
 		// if (!instance || !this.skin[partName] || this.skin[partName] == instance)
 		// 	return;
-		if(instance && oldInstance && oldInstance != instance) {
+		if (instance && oldInstance && oldInstance != instance) {
 			for (let i = 0; i < BaseView.replaceKeys.length; i++) {
 				let key = BaseView.replaceKeys[i];
 				instance[key] = oldInstance[key];
 			}
-			if(instance instanceof eui.BitmapLabel){
+			if (instance instanceof eui.BitmapLabel) {
 				instance["font"] = oldInstance["$font"];
 			}
 			let p = oldInstance.parent;
-			if(p){
+			if (p) {
 				let pIndex = p.getChildIndex(oldInstance);
 				p.addChildAt(instance, pIndex);
 			}
 		}
-		if(oldInstance != instance) {
+		if (oldInstance != instance) {
 			this.skin[partName] = instance;
 			DisplayUtils.destroyDisplayObject(oldInstance);
 		}
