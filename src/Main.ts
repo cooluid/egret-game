@@ -28,8 +28,6 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 class Main extends eui.UILayer {
-
-
     protected createChildren(): void {
         super.createChildren();
 
@@ -62,6 +60,11 @@ class Main extends eui.UILayer {
     private async runGame() {
         await this.loadResource()
         SceneManager.ins().runScene(MainScene);
+        if (DeviceUtils.IsPC) {
+            let stg = StageUtils.ins();
+            stg.setScaleMode(egret.StageScaleMode.SHOW_ALL);
+            stg.getStage().orientation = egret.OrientationMode.AUTO;
+        }
         // this.createGameScene();
         // const result = await RES.getResAsync("description_json")
         // this.startAnimation(result);
@@ -72,12 +75,13 @@ class Main extends eui.UILayer {
     }
 
     //设定加载外部资源
-    private resUrl: string = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
+    // private resUrl: string = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
     private async loadResource() {
+        let resUrl = DebugUtils.isDebug ? 'http://10.10.13.39:8000/resource' : 'http://xxxx.cool/wxgame-resource-v1/resource';
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
-            await RES.loadConfig(`${this.resUrl}/resource/default.res.json` + `?v=${Math.random()}`, `${this.resUrl}/resource/`);
+            await RES.loadConfig(`${resUrl}/default.res.json` + `?v=${Math.random()}`, `${resUrl}/`);
             await this.loadTheme();
             await RES.loadGroup("preload", 0, loadingView);
             this.stage.removeChild(loadingView);

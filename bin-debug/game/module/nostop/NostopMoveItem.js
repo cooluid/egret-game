@@ -10,11 +10,41 @@ r.prototype = e.prototype, t.prototype = new r();
 };
 var NostopMoveItem = (function (_super) {
     __extends(NostopMoveItem, _super);
-    function NostopMoveItem() {
+    function NostopMoveItem(_width) {
         var _this = _super.call(this) || this;
+        _this.mapWidth = 0;
         _this.skinName = 'NostopMoveItemSkin';
+        _this.mapWidth = _width;
         return _this;
     }
+    NostopMoveItem.prototype.childrenCreated = function () {
+        this.start();
+    };
+    NostopMoveItem.prototype.start = function () {
+        var _this = this;
+        // egret.Tween.removeTweens(this);
+        var t = egret.Tween.get(this);
+        var endX = 0;
+        if (this.x > (this.mapWidth / 2 - this.width / 2)) {
+            if (this.x != this.mapWidth - this.width) {
+                endX = this.mapWidth - this.width;
+            }
+            else {
+                endX = 0;
+            }
+        }
+        else {
+            if (this.x != 0) {
+                endX = 0;
+            }
+            else {
+                endX = this.mapWidth - this.width;
+            }
+        }
+        t.to({ x: endX }, 2000).call(function () {
+            _this.start();
+        }, this);
+    };
     return NostopMoveItem;
 }(BaseView));
 __reflect(NostopMoveItem.prototype, "NostopMoveItem");
