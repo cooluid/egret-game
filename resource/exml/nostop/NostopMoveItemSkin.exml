@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="NostopMoveItemSkin" xmlns:e="http://ns.egret.com/eui">
-	<e:Image horizontalCenter="0" verticalCenter="0" source="common_json.king"/>
+<e:Skin class="NostopMoveItemSkin" xmlns:e="http://ns.egret.com/eui" width="104" height="67">
+	<e:Image verticalCenter="0" source="mainres_json.shade-01b" horizontalCenter="0" scale9Grid="76,74,71,75" anchorOffsetX="0" anchorOffsetY="0" width="100" height="100"/>
 </e:Skin>

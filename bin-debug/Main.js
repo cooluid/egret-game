@@ -74,10 +74,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        //设定加载外部资源
-        _this.resUrl = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
-        return _this;
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Main.prototype.createChildren = function () {
         _super.prototype.createChildren.call(this);
@@ -102,42 +99,53 @@ var Main = (function (_super) {
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var stg;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0: return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
                         SceneManager.ins().runScene(MainScene);
+                        if (DeviceUtils.IsPC) {
+                            stg = StageUtils.ins();
+                            stg.setScaleMode(egret.StageScaleMode.SHOW_ALL);
+                            stg.getStage().orientation = egret.OrientationMode.AUTO;
+                        }
                         return [2 /*return*/];
                 }
             });
         });
     };
+    //设定加载外部资源
+    // private resUrl: string = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
     Main.prototype.loadResource = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var loadingView, e_1;
+            var resUrl, loadingView, e_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        _a.trys.push([0, 4, , 5]);
+                        resUrl = DebugUtils.isDebug ? 'http://10.10.13.39:8000/resource' : 'http://xxxx.cool/wxgame-resource-v1/resource';
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 5, , 6]);
                         loadingView = new LoadingUI();
                         this.stage.addChild(loadingView);
-                        return [4 /*yield*/, RES.loadConfig(this.resUrl + "/resource/default.res.json" + ("?v=" + Math.random()), this.resUrl + "/resource/")];
-                    case 1:
-                        _a.sent();
-                        return [4 /*yield*/, this.loadTheme()];
+                        return [4 /*yield*/, RES.loadConfig(resUrl + "/default.res.json" + ("?v=" + Math.random()), resUrl + "/")];
                     case 2:
                         _a.sent();
-                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
+                        return [4 /*yield*/, this.loadTheme()];
                     case 3:
                         _a.sent();
-                        this.stage.removeChild(loadingView);
-                        return [3 /*break*/, 5];
+                        return [4 /*yield*/, RES.loadGroup("preload", 0, loadingView)];
                     case 4:
+                        _a.sent();
+                        this.stage.removeChild(loadingView);
+                        return [3 /*break*/, 6];
+                    case 5:
                         e_1 = _a.sent();
                         console.error(e_1);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 6];
+                    case 6: return [2 /*return*/];
                 }
             });
         });
