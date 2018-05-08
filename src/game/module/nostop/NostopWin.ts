@@ -4,6 +4,7 @@ class NostopWin extends BaseEuiView {
 		this.skinName = 'NostopWinSkin';
 		let conf = GlobalConfig.getNostopConfByIndex(1);
 		DebugUtils.log(conf);
+		SoundManager.ins().playBg('mh_mp3');
 		this.addTouchEvent(this, () => {
 			ViewManager.ins().close(this);
 			ViewManager.ins().open(NostopPlayerWin);

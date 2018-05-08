@@ -168,4 +168,3 @@ var BaseEuiView = (function (_super) {
     return BaseEuiView;
 }(BaseView));
 __reflect(BaseEuiView.prototype, "BaseEuiView", ["IBaseView"]);
-//# sourceMappingURL=BaseEuiView.js.map

@@ -104,4 +104,3 @@ var Algorithm = (function () {
     return Algorithm;
 }());
 __reflect(Algorithm.prototype, "Algorithm");
-//# sourceMappingURL=Algorithm.js.map

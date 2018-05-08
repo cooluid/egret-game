@@ -124,7 +124,7 @@ var Main = (function (_super) {
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
-                        resUrl = DebugUtils.isDebug ? 'http://10.10.13.39:8000/resource' : 'http://xxxx.cool/wxgame-resource-v1/resource';
+                        resUrl = DebugUtils.isDebug ? 'http://10.10.13.39:8000/resource' : 'https://www.xxxx.cool/wxgame-resource-v1/resource';
                         _a.label = 1;
                     case 1:
                         _a.trys.push([1, 5, , 6]);
@@ -271,5 +271,4 @@ window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
 window['NostopMoveItem'] = NostopMoveItem;
-window['isDebug'] = true;
-//# sourceMappingURL=Main.js.map
+window['isDebug'] = false;

@@ -38,4 +38,3 @@ var PointUtils = (function () {
     return PointUtils;
 }());
 __reflect(PointUtils.prototype, "PointUtils");
-//# sourceMappingURL=PointUtils.js.map

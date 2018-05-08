@@ -30,12 +30,12 @@
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
 		"resource/eui_skins/new/Button_01.exml",
-		"resource/exml/main/MainSkin.exml",
-		"resource/exml/main/WelcomeSkin.exml",
 		"resource/exml/nostop/NostopMainItemSkin.exml",
 		"resource/exml/nostop/NostopMoveItemSkin.exml",
 		"resource/exml/nostop/NostopPlayerWinSkin.exml",
-		"resource/exml/nostop/NostopWinSkin.exml"
+		"resource/exml/nostop/NostopWinSkin.exml",
+		"resource/exml/main/MainSkin.exml",
+		"resource/exml/main/WelcomeSkin.exml"
 	],
 	"path": "resource/default.thm.json"
 }

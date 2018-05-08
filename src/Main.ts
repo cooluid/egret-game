@@ -77,7 +77,7 @@ class Main extends eui.UILayer {
     //设定加载外部资源
     // private resUrl: string = 'http://10.10.13.39:8000' || 'http://0.0.0.0:8000';
     private async loadResource() {
-        let resUrl = DebugUtils.isDebug ? 'http://10.10.13.39:8000/resource' : 'http://xxxx.cool/wxgame-resource-v1/resource';
+        let resUrl = DebugUtils.isDebug ? 'http://10.10.13.39:8000/resource' : 'https://www.xxxx.cool/wxgame-resource-v1/resource';
         try {
             const loadingView = new LoadingUI();
             this.stage.addChild(loadingView);
@@ -222,4 +222,4 @@ window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
 window['NostopMoveItem'] = NostopMoveItem;
-window['isDebug'] = true;
+window['isDebug'] = false;

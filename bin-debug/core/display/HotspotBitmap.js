@@ -37,4 +37,3 @@ var HotspotBitmap = (function (_super) {
     return HotspotBitmap;
 }(egret.Bitmap));
 __reflect(HotspotBitmap.prototype, "HotspotBitmap");
-//# sourceMappingURL=HotspotBitmap.js.map

@@ -63,4 +63,3 @@ window.onerror = function () {
         return;
     alert(resultStr);
 };
-//# sourceMappingURL=ErrorLog.js.map

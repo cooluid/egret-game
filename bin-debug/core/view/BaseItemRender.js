@@ -108,4 +108,3 @@ var BaseItemRender = (function (_super) {
 }(BaseView));
 __reflect(BaseItemRender.prototype, "BaseItemRender", ["eui.IItemRenderer", "eui.UIComponent", "egret.DisplayObject"]);
 eui.registerBindable(BaseItemRender.prototype, "data");
-//# sourceMappingURL=BaseItemRender.js.map

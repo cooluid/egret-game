@@ -48,4 +48,3 @@ var TipsItem = (function (_super) {
     return TipsItem;
 }(BaseView));
 __reflect(TipsItem.prototype, "TipsItem");
-//# sourceMappingURL=TipsItem.js.map

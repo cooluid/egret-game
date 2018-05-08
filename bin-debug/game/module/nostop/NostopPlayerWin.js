@@ -116,4 +116,3 @@ var NostopPlayerWin = (function (_super) {
 }(BaseEuiView));
 __reflect(NostopPlayerWin.prototype, "NostopPlayerWin");
 ViewManager.ins().reg(NostopPlayerWin, LayerManager.UI_Popup);
-//# sourceMappingURL=NostopPlayerWin.js.map

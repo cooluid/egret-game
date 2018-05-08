@@ -37,4 +37,3 @@ var Stone = (function (_super) {
     return Stone;
 }(BaseView));
 __reflect(Stone.prototype, "Stone");
-//# sourceMappingURL=Stone.js.map
