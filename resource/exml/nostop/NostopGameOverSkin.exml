@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="NostopGameOverSkin" width="400" height="300" xmlns:e="http://ns.egret.com/eui">
+	<e:Group width="400" height="300" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="mainres_json.tip-bg" scale9Grid="80,60,480,29" left="0" right="0" top="0" bottom="0"/>
+		<e:Label text="游戏结束" y="77" x="140"/>
+	</e:Group>
+</e:Skin>

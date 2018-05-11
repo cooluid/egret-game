@@ -79,6 +79,10 @@ class NostopPlayerWin extends BaseEuiView {
 			let enemy = this.enemys[i];
 			if (!enemy) continue;
 			enemy.y += speed * 2;
+			//检测碰撞
+			if (enemy.hitTestPoint(this.mainPlayer.x, this.mainPlayer.y, false)) {
+				this.gameOver();
+			}
 			this.removeEnemy(enemy);
 		}
 	}
@@ -108,6 +112,11 @@ class NostopPlayerWin extends BaseEuiView {
 			ObjectPool.push(enemy);
 			DebugUtils.log(`移除实体`);
 		}
+	}
+
+	private gameOver(): void {
+		TimerManager.ins().remove(this.start, this);
+		ViewManager.ins().open(NostopGameOverWin);
 	}
 }
 ViewManager.ins().reg(NostopPlayerWin, LayerManager.UI_Popup);

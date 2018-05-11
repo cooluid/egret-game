@@ -62,7 +62,8 @@ class GameApp {
 	//如果失败可以在这里处理之后在post
 	public static doPerLoadComplete() {
 		this.postPerLoadComplete();
-		ViewManager.ins().open(MainWin);
+
+		SceneManager.ins().runScene(MainScene);
 	}
 
 	public static postPerLoadComplete() {

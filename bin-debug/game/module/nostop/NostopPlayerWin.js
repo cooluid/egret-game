@@ -83,6 +83,10 @@ var NostopPlayerWin = (function (_super) {
             if (!enemy)
                 continue;
             enemy.y += speed * 2;
+            //检测碰撞
+            if (enemy.hitTestPoint(this.mainPlayer.x, this.mainPlayer.y, false)) {
+                this.gameOver();
+            }
             this.removeEnemy(enemy);
         }
     };
@@ -111,6 +115,10 @@ var NostopPlayerWin = (function (_super) {
             ObjectPool.push(enemy);
             DebugUtils.log("\u79FB\u9664\u5B9E\u4F53");
         }
+    };
+    NostopPlayerWin.prototype.gameOver = function () {
+        TimerManager.ins().remove(this.start, this);
+        ViewManager.ins().open(NostopGameOverWin);
     };
     return NostopPlayerWin;
 }(BaseEuiView));

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChickRunMainSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="mainres_json.page-arrow" rotation="270" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

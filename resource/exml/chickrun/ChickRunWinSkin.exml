@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChickRunWinSkin" width="640" height="1024" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image source="mainres_json.main" x="0" y="0"/>
+		<e:Label id="btnStart" text="开始游戏" horizontalCenter="0" bottom="100"/>
+	</e:Group>
+</e:Skin>

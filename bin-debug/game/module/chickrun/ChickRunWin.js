@@ -8,25 +8,25 @@ var __extends = this && this.__extends || function __extends(t, e) {
 for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
-var MainWin = (function (_super) {
-    __extends(MainWin, _super);
-    function MainWin() {
+/**绝地跑鸡主窗口 */
+var ChickRunWin = (function (_super) {
+    __extends(ChickRunWin, _super);
+    function ChickRunWin() {
         var _this = _super.call(this) || this;
-        _this.skinName = 'MainSkin';
+        _this.skinName = 'ChickRunWinSkin';
         return _this;
     }
-    MainWin.prototype.childrenCreated = function () {
+    ChickRunWin.prototype.childrenCreated = function () {
         var _this = this;
         _super.prototype.childrenCreated.call(this);
         this.addTouchEvent(this.btnStart, function () {
-            ViewManager.ins().close(_this);
-            // Jump.ins().initGame();
-            // ViewManager.ins().open(NostopWin);
-            ViewManager.ins().open(GameSceneView);
+            var vms = ViewManager.ins();
+            vms.close(_this);
+            vms.open(GameSceneView);
         });
     };
-    return MainWin;
+    return ChickRunWin;
 }(BaseEuiView));
-__reflect(MainWin.prototype, "MainWin");
-ViewManager.ins().reg(MainWin, LayerManager.UI_Main);
-//# sourceMappingURL=MainWin.js.map
+__reflect(ChickRunWin.prototype, "ChickRunWin");
+ViewManager.ins().reg(ChickRunWin, LayerManager.UI_Main);
+//# sourceMappingURL=ChickRunWin.js.map

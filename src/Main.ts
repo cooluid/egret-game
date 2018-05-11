@@ -59,7 +59,7 @@ class Main extends eui.UILayer {
 
     private async runGame() {
         await this.loadResource()
-        SceneManager.ins().runScene(MainScene);
+        new GameApp();
         if (DeviceUtils.IsPC) {
             let stg = StageUtils.ins();
             stg.setScaleMode(egret.StageScaleMode.SHOW_ALL);
@@ -221,5 +221,5 @@ class Main extends eui.UILayer {
 window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
-window['NostopMoveItem'] = NostopMoveItem;
+window['ChickRunStreetItem'] = ChickRunStreetItem;
 window['isDebug'] = true;

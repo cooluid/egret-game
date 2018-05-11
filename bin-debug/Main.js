@@ -105,7 +105,7 @@ var Main = (function (_super) {
                     case 0: return [4 /*yield*/, this.loadResource()];
                     case 1:
                         _a.sent();
-                        SceneManager.ins().runScene(MainScene);
+                        new GameApp();
                         if (DeviceUtils.IsPC) {
                             stg = StageUtils.ins();
                             stg.setScaleMode(egret.StageScaleMode.SHOW_ALL);
@@ -270,6 +270,6 @@ __reflect(Main.prototype, "Main");
 window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
-window['NostopMoveItem'] = NostopMoveItem;
+window['ChickRunStreetItem'] = ChickRunStreetItem;
 window['isDebug'] = true;
 //# sourceMappingURL=Main.js.map

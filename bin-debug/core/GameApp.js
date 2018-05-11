@@ -48,7 +48,7 @@ var GameApp = (function () {
     //如果失败可以在这里处理之后在post
     GameApp.doPerLoadComplete = function () {
         this.postPerLoadComplete();
-        ViewManager.ins().open(MainWin);
+        SceneManager.ins().runScene(MainScene);
     };
     GameApp.postPerLoadComplete = function () {
     };

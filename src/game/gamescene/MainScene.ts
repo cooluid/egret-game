@@ -25,7 +25,7 @@ class MainScene extends BaseScene {
 
 		SoundManager.ins().stopBg();
 
-		new GameApp();
+		ViewManager.ins().open(ChickRunWin);
 	}
 
 	/**

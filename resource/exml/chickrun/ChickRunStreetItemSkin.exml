@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ChickRunStreetItemSkin" xmlns:e="http://ns.egret.com/eui" width="640">
+	<e:Image source="street_jpg" verticalCenter="0" scale9Grid="60,81,360,188" left="0" right="0"/>
+</e:Skin>

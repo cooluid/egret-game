@@ -29,7 +29,7 @@ var MainScene = (function (_super) {
         this.addLayer(LayerManager.UI_Tips);
         GameApp.postLoginInit();
         SoundManager.ins().stopBg();
-        new GameApp();
+        ViewManager.ins().open(ChickRunWin);
     };
     /**
      * 退出Scene调用
