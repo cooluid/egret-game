@@ -37,4 +37,3 @@ function getP1ByP0P2(p0, p2, minDis) {
     p1.y = Math.min(p2.y, p0.y - minDis);
     return p1;
 }
-//# sourceMappingURL=Bezier.js.map

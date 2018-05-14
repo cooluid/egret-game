@@ -44,4 +44,3 @@ var WatcherUtils = (function () {
     return WatcherUtils;
 }());
 __reflect(WatcherUtils.prototype, "WatcherUtils");
-//# sourceMappingURL=WatcherUtils.js.map

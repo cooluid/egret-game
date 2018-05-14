@@ -48,4 +48,3 @@ var NostopMoveItem = (function (_super) {
     return NostopMoveItem;
 }(BaseView));
 __reflect(NostopMoveItem.prototype, "NostopMoveItem");
-//# sourceMappingURL=NostopMoveItem.js.map

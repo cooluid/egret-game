@@ -63,4 +63,3 @@ var TipsView = (function (_super) {
 }(BaseEuiView));
 __reflect(TipsView.prototype, "TipsView");
 ViewManager.ins().reg(TipsView, LayerManager.UI_Tips);
-//# sourceMappingURL=TipsView.js.map

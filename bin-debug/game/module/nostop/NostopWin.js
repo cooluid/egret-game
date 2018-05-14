@@ -15,6 +15,7 @@ var NostopWin = (function (_super) {
         _this.skinName = 'NostopWinSkin';
         var conf = GlobalConfig.getNostopConfByIndex(1);
         DebugUtils.log(conf);
+        SoundManager.ins().playBg('mh_mp3');
         _this.addTouchEvent(_this, function () {
             ViewManager.ins().close(_this);
             ViewManager.ins().open(NostopPlayerWin);
@@ -25,4 +26,3 @@ var NostopWin = (function (_super) {
 }(BaseEuiView));
 __reflect(NostopWin.prototype, "NostopWin");
 ViewManager.ins().reg(NostopWin, LayerManager.UI_Main);
-//# sourceMappingURL=NostopWin.js.map

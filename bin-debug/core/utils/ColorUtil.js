@@ -62,4 +62,3 @@ var ColorUtil = (function () {
     return ColorUtil;
 }());
 __reflect(ColorUtil.prototype, "ColorUtil");
-//# sourceMappingURL=ColorUtil.js.map

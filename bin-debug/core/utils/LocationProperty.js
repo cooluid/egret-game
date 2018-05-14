@@ -245,4 +245,3 @@ var LocationProperty = (function () {
     return LocationProperty;
 }());
 __reflect(LocationProperty.prototype, "LocationProperty");
-//# sourceMappingURL=LocationProperty.js.map
