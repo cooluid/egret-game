@@ -4874,6 +4874,9 @@ var egret;
             for (var i = 0; i < length; i++) {
                 var child = this.$children[i];
                 child.$onAddToStage(stage, nestLevel);
+                if (child.$maskedObject) {
+                    child.$maskedObject.$updateRenderMode();
+                }
             }
         };
         /**
@@ -16893,7 +16896,7 @@ var egret;
          * @platform Web,Native
          * @language zh_CN
          */
-        Capabilities.engineVersion = "5.1.10";
+        Capabilities.engineVersion = "5.1.11";
         /***
          * current render mode.
          * @type {string}
@@ -17628,6 +17631,9 @@ var egret;
         BitmapText.prototype.$setText = function (value) {
             if (value == null) {
                 value = "";
+            }
+            else {
+                value = String(value);
             }
             var self = this;
             if (value == self.$text)
@@ -19026,7 +19032,8 @@ var egret;
                 34: 0xffffff,
                 35: null,
                 36: null,
-                37: egret.TextFieldInputType.TEXT //inputType
+                37: egret.TextFieldInputType.TEXT,
+                38: false //textLinesChangedForNativeRender
             };
             return _this;
         }
@@ -20305,6 +20312,7 @@ var egret;
             var self = this;
             self.$renderDirty = true;
             self.$TextField[18 /* textLinesChanged */] = true;
+            self.$TextField[38 /* textLinesChangedForNativeRender */] = true;
             if (egret.nativeRender) {
                 // egret_native.dirtyTextField(this);
             }
@@ -20454,6 +20462,7 @@ var egret;
          */
         TextField.prototype.setMiddleStyle = function (textArr) {
             this.$TextField[18 /* textLinesChanged */] = true;
+            this.$TextField[38 /* textLinesChangedForNativeRender */] = true;
             this.textArr = textArr;
             this.$invalidateTextField();
         };
@@ -20524,6 +20533,7 @@ var egret;
                 this.textArr.push(element);
                 this.$TextField[13 /* text */] = text;
                 this.$TextField[18 /* textLinesChanged */] = true;
+                this.$TextField[38 /* textLinesChangedForNativeRender */] = true;
                 this.$nativeDisplayObject.setTextFlow(this.textArr);
                 return;
             }
@@ -20536,18 +20546,24 @@ var egret;
                 this.setMiddleStyle(this.textArr);
             }
         };
+        TextField.prototype.$getLinesArr = function () {
+            var values = this.$TextField;
+            if (egret.nativeRender && values[38 /* textLinesChangedForNativeRender */]) {
+                egret_native.updateNativeRender();
+                values[38 /* textLinesChangedForNativeRender */] = false;
+                return;
+            }
+            else {
+                return this.$getLinesArr2();
+            }
+        };
         /**
          * @private
          *
          * @returns
          */
-        TextField.prototype.$getLinesArr = function () {
+        TextField.prototype.$getLinesArr2 = function () {
             var values = this.$TextField;
-            if (egret.nativeRender && values[18 /* textLinesChanged */]) {
-                egret_native.updateNativeRender();
-                values[18 /* textLinesChanged */] = false;
-                return;
-            }
             if (!values[18 /* textLinesChanged */]) {
                 return this.linesArr;
             }
@@ -21144,7 +21160,7 @@ var egret;
          * @private
          */
         TextFieldUtils.$getHalign = function (textfield) {
-            var lineArr = textfield.$getLinesArr();
+            var lineArr = textfield.$getLinesArr2();
             var halign = 0;
             if (textfield.$TextField[9 /* textAlign */] == egret.HorizontalAlign.CENTER) {
                 halign = 0.5;
@@ -21205,7 +21221,7 @@ var egret;
          */
         TextFieldUtils.$getTextElement = function (textfield, x, y) {
             var hitTextEle = TextFieldUtils.$getHit(textfield, x, y);
-            var lineArr = textfield.$getLinesArr();
+            var lineArr = textfield.$getLinesArr2();
             if (hitTextEle && lineArr[hitTextEle.lineIndex] && lineArr[hitTextEle.lineIndex].elements[hitTextEle.textElementIndex]) {
                 return lineArr[hitTextEle.lineIndex].elements[hitTextEle.textElementIndex];
             }
@@ -21220,7 +21236,7 @@ var egret;
          * @private
          */
         TextFieldUtils.$getHit = function (textfield, x, y) {
-            var lineArr = textfield.$getLinesArr();
+            var lineArr = textfield.$getLinesArr2();
             if (textfield.$TextField[3 /* textFieldWidth */] == 0) {
                 return null;
             }
