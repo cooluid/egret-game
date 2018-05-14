@@ -18,7 +18,7 @@ class GameSceneView extends BaseEuiView {
 		this.mapGrp.addChild(this.map);
 		this.main = ChickRunMain.ins();
 		this.map.addMainEntiy(this.main);
-		this.main.x = (this.width - this.main.width) / 2;
+		this.main.x = (this.width) / 2;
 		this.main.y = this.height / 2 + 200;
 	}
 
@@ -26,6 +26,7 @@ class GameSceneView extends BaseEuiView {
 		this.addTouchBeginEvent(this, this.pause);
 		this.addTouchEndEvent(this, this.run);
 		this.observe(ChickRun.ins().postCollision, this.collision);
+		this.observe(ChickRun.ins().postChangeConf, this.changeConf);
 
 		this.run();
 
@@ -33,12 +34,22 @@ class GameSceneView extends BaseEuiView {
 	}
 
 	private saveScore() {
-		//每隔3s积分一次
-		egret.Tween.get(this.scoreValueTF).wait(3000).call(() => {
+		//每隔1s积分一次
+		egret.Tween.get(this.scoreValueTF).wait(1000).call(() => {
 			this.score += 1;
 			this.scoreValueTF.text = this.score.toString();
+			if (this.score % 20 == 0 && this.score != 0) {
+				ChickRun.ins().postChangeConf();
+			}
 			this.saveScore();
 		}, this);
+	}
+
+	private interval: number = 2500;
+	private downv: number = 0.2;
+	private changeConf() {
+		this.interval -= 50;
+		this.downv += .05;
 	}
 
 	public close() {
@@ -67,6 +78,7 @@ class GameSceneView extends BaseEuiView {
 			}
 			timer.doTimer(20, 0, this.startup, this);
 			egret.Tween.resumeTweens(this.scoreValueTF);
+			egret.Tween.resumeTweens(this.main);
 		}
 	}
 
@@ -78,6 +90,7 @@ class GameSceneView extends BaseEuiView {
 			egret.Tween.pauseTweens(item);
 		}
 		egret.Tween.pauseTweens(this.scoreValueTF);
+		egret.Tween.pauseTweens(this.main);
 	}
 
 	private passTime = 0;
@@ -89,11 +102,10 @@ class GameSceneView extends BaseEuiView {
 			this.startTime = egret.getTimer();
 			let item = this.createStreet();
 			this.map.addEntity(item);
-			this.intervalTime = Math.random() * 5000 + 2500;
+			this.intervalTime = this.interval;
 			//移动
 			let s = this.height - item.y;
-			let v = 0.1;
-			let time = s / v;
+			let time = s / this.downv;
 			let tt = egret.Tween.get(item);
 			tt.to({ y: s }, time).call(() => {
 				this.removeStreet(item);
@@ -103,7 +115,7 @@ class GameSceneView extends BaseEuiView {
 
 	private createStreet(): ChickRunStreetItem {
 		let item = ObjectPool.pop('ChickRunStreetItem');
-		item.y = -400;
+		item.y = -640;
 		return item;
 	}
 

@@ -13,8 +13,8 @@ var BaseSystem = (function (_super) {
     function BaseSystem() {
         var _this = _super.call(this) || this;
         //必须在init前
-        var cls = egret.getDefinitionByName(egret.getQualifiedClassName(_this));
-        MessageCenter.compile(cls);
+        // let cls = egret.getDefinitionByName(egret.getQualifiedClassName(this));
+        // MessageCenter.compile(cls);
         _this.observe(GameApp.postLoginInit, _this.initLogin);
         return _this;
     }

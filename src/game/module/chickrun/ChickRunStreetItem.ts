@@ -1,7 +1,7 @@
 class ChickRunStreetItem extends BaseItemRender {
-	private YPOS: number[] = [120, 230];
+	private YPOS: number[] = [180, 460];
 	private allCars: ChickRunCarItem[][] = [[], [], [], []];
-	private timeTest = 4500;
+	private timeTest = 1500;
 	private main: ChickRunMain;
 	public constructor() {
 		super();
@@ -12,6 +12,11 @@ class ChickRunStreetItem extends BaseItemRender {
 		super.childrenCreated();
 		this.main = ChickRunMain.ins();
 		TimerManager.ins().doTimer(250, 0, this.show, this);
+		this.observe(ChickRun.ins().postChangeConf, this.changeConf);
+	}
+
+	private changeConf() {
+		this.timeTest -= 100;
 	}
 
 	private show() {
@@ -26,7 +31,8 @@ class ChickRunStreetItem extends BaseItemRender {
 			let car = this.createCar(0);
 			if (car) {
 				car.x = -car.width;
-				car.y = this.YPOS[0] - car.height - Math.random() * 10 - 5;
+				car.y = this.YPOS[0] - car.height - Math.random() * 10 - 50;
+				// this.timeTest = Math.random() * 1000 + 2000;
 				egret.Tween.get(car, { onChange: () => { this.collision(); }, onChangeObj: this }).to({ x: 640 + car.width }, this.timeTest).call(() => {
 					DisplayUtils.removeFromParent(car);
 					let index = cars1.indexOf(car);
@@ -44,7 +50,8 @@ class ChickRunStreetItem extends BaseItemRender {
 			let car = this.createCar(1);
 			if (car) {
 				car.x = -car.width;
-				car.y = this.YPOS[0] + Math.random() * 10 + 10;
+				car.y = this.YPOS[0] + Math.random() * 10 + 50;
+				// this.timeTest = Math.random() * 1000 + 2000;
 				egret.Tween.get(car, { onChange: () => { this.collision(); }, onChangeObj: this }).to({ x: 640 + car.width }, this.timeTest).call(() => {
 					DisplayUtils.removeFromParent(car);
 					let index = cars2.indexOf(car);
@@ -62,7 +69,8 @@ class ChickRunStreetItem extends BaseItemRender {
 			let car = this.createCar(2);
 			if (car) {
 				car.x = this.width + car.width;
-				car.y = this.YPOS[1] - car.height - Math.random() * 10;
+				car.y = this.YPOS[1] - car.height - Math.random() * 10 - 50;
+				// this.timeTest = Math.random() * 1000 + 2000;
 				egret.Tween.get(car, { onChange: () => { this.collision(); }, onChangeObj: this }).to({ x: -car.width }, this.timeTest).call(() => {
 					DisplayUtils.removeFromParent(car);
 					let index = cars3.indexOf(car);
@@ -80,7 +88,8 @@ class ChickRunStreetItem extends BaseItemRender {
 			let car = this.createCar(3);
 			if (car) {
 				car.x = this.width + car.width;
-				car.y = this.YPOS[1] + Math.random() * 10 + 10;
+				car.y = this.YPOS[1] + Math.random() * 10 + 50;
+				// this.timeTest = Math.random() * 1000 + 2000;
 				egret.Tween.get(car, { onChange: () => { this.collision(); }, onChangeObj: this }).to({ x: -car.width }, this.timeTest).call(() => {
 					DisplayUtils.removeFromParent(car);
 					let index = cars4.indexOf(car);
@@ -104,7 +113,8 @@ class ChickRunStreetItem extends BaseItemRender {
 		for (let cars of this.allCars) {
 			for (let car of cars) {
 				if (!car) continue;
-				if ((car.hitTestPoint(this.main.x, this.main.y))) {
+				let p = this.main.localToGlobal();
+				if ((car.hitTestPoint(p.x, p.y))) {
 					egret.Tween.removeTweens(car);
 					ChickRun.ins().postCollision(car);
 					DebugUtils.log(`碰撞！！！！！！！！！！！！`);

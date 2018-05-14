@@ -15,7 +15,12 @@ class ChickRun extends BaseSystem {
     public postCollision(car: ChickRunCarItem): ChickRunCarItem {
         return car;
     }
+
+    public postChangeConf() {
+        DebugUtils.log(`改变配置`);
+    }
 }
+MessageCenter.compile(ChickRun);
 namespace GameSystem {
     export let chickRun = ChickRun.ins.bind(ChickRun);
 }

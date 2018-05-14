@@ -11,19 +11,19 @@
 	"game": [
 		"bin-debug/core/view/BaseView.js",
 		"bin-debug/core/scene/base/BaseEuiLayer.js",
-		"bin-debug/core/base/BaseClass.js",
 		"bin-debug/core/scene/base/BaseSpriteLayer.js",
 		"bin-debug/core/view/BaseItemRender.js",
-		"bin-debug/core/scene/base/BaseScene.js",
+		"bin-debug/core/base/BaseClass.js",
 		"bin-debug/core/net/GameByteArray.js",
 		"bin-debug/game/module/chickrun/ChickRunStreetItem.js",
-		"bin-debug/core/base/BaseSystem.js",
-		"bin-debug/core/base/MessageCenter.js",
-		"bin-debug/core/scene/manager/LayerManager.js",
+		"bin-debug/core/scene/base/BaseScene.js",
 		"bin-debug/core/sound/BaseSound.js",
 		"bin-debug/core/view/BaseEuiView.js",
 		"bin-debug/core/base/TimerManager.js",
 		"bin-debug/core/base/ViewManager.js",
+		"bin-debug/core/base/BaseSystem.js",
+		"bin-debug/core/base/MessageCenter.js",
+		"bin-debug/core/scene/manager/LayerManager.js",
 		"bin-debug/core/utils/DisplayUtils.js",
 		"bin-debug/core/consts/Keyboard.js",
 		"bin-debug/core/display/BmpNumber.js",
@@ -54,7 +54,7 @@
 		"bin-debug/core/utils/Debug.js",
 		"bin-debug/core/utils/DebugUtils.js",
 		"bin-debug/core/utils/DeviceUtils.js",
-		"bin-debug/game/tips/TipsView.js",
+		"bin-debug/LoadingUI.js",
 		"bin-debug/core/utils/ErrorLog.js",
 		"bin-debug/core/utils/KeyboardUtils.js",
 		"bin-debug/core/utils/KeyCode.js",
@@ -99,6 +99,6 @@
 		"bin-debug/game/module/nostop/NostopWin.js",
 		"bin-debug/game/tips/TipsControl.js",
 		"bin-debug/game/tips/TipsItem.js",
-		"bin-debug/LoadingUI.js"
+		"bin-debug/game/tips/TipsView.js"
 	]
 }

@@ -22,9 +22,13 @@ var ChickRun = (function (_super) {
     ChickRun.prototype.postCollision = function (car) {
         return car;
     };
+    ChickRun.prototype.postChangeConf = function () {
+        DebugUtils.log("\u6539\u53D8\u914D\u7F6E");
+    };
     return ChickRun;
 }(BaseSystem));
 __reflect(ChickRun.prototype, "ChickRun");
+MessageCenter.compile(ChickRun);
 var GameSystem;
 (function (GameSystem) {
     GameSystem.chickRun = ChickRun.ins.bind(ChickRun);

@@ -12,9 +12,9 @@ var ChickRunStreetItem = (function (_super) {
     __extends(ChickRunStreetItem, _super);
     function ChickRunStreetItem() {
         var _this = _super.call(this) || this;
-        _this.YPOS = [120, 230];
+        _this.YPOS = [180, 460];
         _this.allCars = [[], [], [], []];
-        _this.timeTest = 4500;
+        _this.timeTest = 1500;
         _this.skinName = 'ChickRunStreetItemSkin';
         return _this;
     }
@@ -22,6 +22,10 @@ var ChickRunStreetItem = (function (_super) {
         _super.prototype.childrenCreated.call(this);
         this.main = ChickRunMain.ins();
         TimerManager.ins().doTimer(250, 0, this.show, this);
+        this.observe(ChickRun.ins().postChangeConf, this.changeConf);
+    };
+    ChickRunStreetItem.prototype.changeConf = function () {
+        this.timeTest -= 100;
     };
     ChickRunStreetItem.prototype.show = function () {
         var _this = this;
@@ -36,7 +40,8 @@ var ChickRunStreetItem = (function (_super) {
             var car_1 = this.createCar(0);
             if (car_1) {
                 car_1.x = -car_1.width;
-                car_1.y = this.YPOS[0] - car_1.height - Math.random() * 10 - 5;
+                car_1.y = this.YPOS[0] - car_1.height - Math.random() * 10 - 50;
+                // this.timeTest = Math.random() * 1000 + 2000;
                 egret.Tween.get(car_1, { onChange: function () { _this.collision(); }, onChangeObj: this }).to({ x: 640 + car_1.width }, this.timeTest).call(function () {
                     DisplayUtils.removeFromParent(car_1);
                     var index = cars1.indexOf(car_1);
@@ -53,7 +58,8 @@ var ChickRunStreetItem = (function (_super) {
             var car_2 = this.createCar(1);
             if (car_2) {
                 car_2.x = -car_2.width;
-                car_2.y = this.YPOS[0] + Math.random() * 10 + 10;
+                car_2.y = this.YPOS[0] + Math.random() * 10 + 50;
+                // this.timeTest = Math.random() * 1000 + 2000;
                 egret.Tween.get(car_2, { onChange: function () { _this.collision(); }, onChangeObj: this }).to({ x: 640 + car_2.width }, this.timeTest).call(function () {
                     DisplayUtils.removeFromParent(car_2);
                     var index = cars2.indexOf(car_2);
@@ -70,7 +76,8 @@ var ChickRunStreetItem = (function (_super) {
             var car_3 = this.createCar(2);
             if (car_3) {
                 car_3.x = this.width + car_3.width;
-                car_3.y = this.YPOS[1] - car_3.height - Math.random() * 10;
+                car_3.y = this.YPOS[1] - car_3.height - Math.random() * 10 - 50;
+                // this.timeTest = Math.random() * 1000 + 2000;
                 egret.Tween.get(car_3, { onChange: function () { _this.collision(); }, onChangeObj: this }).to({ x: -car_3.width }, this.timeTest).call(function () {
                     DisplayUtils.removeFromParent(car_3);
                     var index = cars3.indexOf(car_3);
@@ -87,7 +94,8 @@ var ChickRunStreetItem = (function (_super) {
             var car_4 = this.createCar(3);
             if (car_4) {
                 car_4.x = this.width + car_4.width;
-                car_4.y = this.YPOS[1] + Math.random() * 10 + 10;
+                car_4.y = this.YPOS[1] + Math.random() * 10 + 50;
+                // this.timeTest = Math.random() * 1000 + 2000;
                 egret.Tween.get(car_4, { onChange: function () { _this.collision(); }, onChangeObj: this }).to({ x: -car_4.width }, this.timeTest).call(function () {
                     DisplayUtils.removeFromParent(car_4);
                     var index = cars4.indexOf(car_4);
@@ -116,7 +124,8 @@ var ChickRunStreetItem = (function (_super) {
                 var car = cars_1[_b];
                 if (!car)
                     continue;
-                if ((car.hitTestPoint(this.main.x, this.main.y))) {
+                var p = this.main.localToGlobal();
+                if ((car.hitTestPoint(p.x, p.y))) {
                     egret.Tween.removeTweens(car);
                     ChickRun.ins().postCollision(car);
                     DebugUtils.log("\u78B0\u649E\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01\uFF01");

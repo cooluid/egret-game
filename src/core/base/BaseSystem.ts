@@ -5,8 +5,8 @@ class BaseSystem extends BaseClass {
 		super();
 
 		//必须在init前
-		let cls = egret.getDefinitionByName(egret.getQualifiedClassName(this));
-		MessageCenter.compile(cls);
+		// let cls = egret.getDefinitionByName(egret.getQualifiedClassName(this));
+		// MessageCenter.compile(cls);
 
 		this.observe(GameApp.postLoginInit, this.initLogin);
 	}

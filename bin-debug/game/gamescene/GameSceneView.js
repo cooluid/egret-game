@@ -14,6 +14,8 @@ var GameSceneView = (function (_super) {
     function GameSceneView() {
         var _this = _super.call(this) || this;
         _this.intervalTime = 0;
+        _this.interval = 2500;
+        _this.downv = 0.2;
         _this.startTime = 0;
         _this.passTime = 0;
         _this.score = 0;
@@ -27,7 +29,7 @@ var GameSceneView = (function (_super) {
         this.mapGrp.addChild(this.map);
         this.main = ChickRunMain.ins();
         this.map.addMainEntiy(this.main);
-        this.main.x = (this.width - this.main.width) / 2;
+        this.main.x = (this.width) / 2;
         this.main.y = this.height / 2 + 200;
     };
     GameSceneView.prototype.open = function () {
@@ -38,17 +40,25 @@ var GameSceneView = (function (_super) {
         this.addTouchBeginEvent(this, this.pause);
         this.addTouchEndEvent(this, this.run);
         this.observe(ChickRun.ins().postCollision, this.collision);
+        this.observe(ChickRun.ins().postChangeConf, this.changeConf);
         this.run();
         this.saveScore();
     };
     GameSceneView.prototype.saveScore = function () {
         var _this = this;
-        //每隔3s积分一次
-        egret.Tween.get(this.scoreValueTF).wait(3000).call(function () {
+        //每隔1s积分一次
+        egret.Tween.get(this.scoreValueTF).wait(1000).call(function () {
             _this.score += 1;
             _this.scoreValueTF.text = _this.score.toString();
+            if (_this.score % 20 == 0 && _this.score != 0) {
+                ChickRun.ins().postChangeConf();
+            }
             _this.saveScore();
         }, this);
+    };
+    GameSceneView.prototype.changeConf = function () {
+        this.interval -= 50;
+        this.downv += .05;
     };
     GameSceneView.prototype.close = function () {
         this.map.clearMap();
@@ -75,6 +85,7 @@ var GameSceneView = (function (_super) {
             }
             timer.doTimer(20, 0, this.startup, this);
             egret.Tween.resumeTweens(this.scoreValueTF);
+            egret.Tween.resumeTweens(this.main);
         }
     };
     GameSceneView.prototype.pause = function () {
@@ -86,6 +97,7 @@ var GameSceneView = (function (_super) {
             egret.Tween.pauseTweens(item);
         }
         egret.Tween.pauseTweens(this.scoreValueTF);
+        egret.Tween.pauseTweens(this.main);
     };
     GameSceneView.prototype.startup = function () {
         var _this = this;
@@ -95,11 +107,10 @@ var GameSceneView = (function (_super) {
             this.startTime = egret.getTimer();
             var item_1 = this.createStreet();
             this.map.addEntity(item_1);
-            this.intervalTime = Math.random() * 5000 + 2500;
+            this.intervalTime = this.interval;
             //移动
             var s = this.height - item_1.y;
-            var v = 0.1;
-            var time = s / v;
+            var time = s / this.downv;
             var tt = egret.Tween.get(item_1);
             tt.to({ y: s }, time).call(function () {
                 _this.removeStreet(item_1);
@@ -108,7 +119,7 @@ var GameSceneView = (function (_super) {
     };
     GameSceneView.prototype.createStreet = function () {
         var item = ObjectPool.pop('ChickRunStreetItem');
-        item.y = -400;
+        item.y = -640;
         return item;
     };
     GameSceneView.prototype.removeStreet = function (street) {

@@ -17,6 +17,11 @@ var ChickRunMain = (function (_super) {
     }
     ChickRunMain.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
+        this.grp.anchorOffsetX = this.grp.anchorOffsetY = 42;
+        this.show();
+    };
+    ChickRunMain.prototype.show = function () {
+        egret.Tween.get(this, { loop: true }).to({ rotation: -20 }, 150).to({ rotation: 0 }, 150);
     };
     ChickRunMain.ins = function () {
         if (!this._instance)
