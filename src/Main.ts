@@ -222,4 +222,4 @@ window['MessageVo'] = MessageVo;
 window['TimerHandler'] = TimerHandler;
 window['BaseSystem'] = BaseSystem;
 window['ChickRunStreetItem'] = ChickRunStreetItem;
-window['isDebug'] = true;
+window['isDebug'] = !!window;
