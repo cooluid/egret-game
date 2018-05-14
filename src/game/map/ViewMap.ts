@@ -21,7 +21,6 @@ class ViewMap extends egret.DisplayObjectContainer {
     }
 
     public initMap() {
-        this.clearMap();
         this.touchChildren = true;
         this.touchEnabled = true;
         this._entityLayer = new egret.DisplayObjectContainer();
@@ -52,7 +51,17 @@ class ViewMap extends egret.DisplayObjectContainer {
         return this._entityLayer.getChildAt(index);
     }
 
-    private clearMap() {
-
+    public clearMap() {
+        this._entityLayer.removeChildren();
+        DisplayUtils.removeFromParent(this._entityLayer);
+        this._entityLayer = null;
+        this._mainLayer.removeChildren();
+        DisplayUtils.removeFromParent(this._mainLayer);
+        this._mainLayer = null;
+        this._effectLayer.removeChildren();
+        DisplayUtils.removeFromParent(this._effectLayer);
+        this._effectLayer = null;
+        this.entitys.length = 0;
+        ViewMap.instance = null;
     }
 }

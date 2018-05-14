@@ -11,7 +11,11 @@ class ChickRun extends BaseSystem {
     public static ins(): ChickRun {
         return super.ins() as ChickRun;
     }
+
+    public postCollision(car: ChickRunCarItem): ChickRunCarItem {
+        return car;
+    }
 }
 namespace GameSystem {
-    let chickRun = ChickRun.ins.bind(ChickRun);
+    export let chickRun = ChickRun.ins.bind(ChickRun);
 }

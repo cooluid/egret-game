@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="GameSceneViewSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui">
-	<e:Rect left="0" right="0" top="0" bottom="0" fillColor="0x3ac92f"/>
+<e:Skin class="GameSceneViewSkin" width="640" height="1136" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group left="0" right="0" top="0" bottom="0">
+		<e:Rect fillColor="0x3ac92f" left="0" right="0" top="0" bottom="0"/>
+		<e:Group id="mapGrp" left="0" right="0" top="0" bottom="0"/>
+		<e:Label id="scoreTF" text="得分：" left="30" top="30"/>
+		<e:Label id="scoreValueTF" text="0" left="111" top="30"/>
+	</e:Group>
 </e:Skin>

@@ -8,6 +8,7 @@ class ChickRunWin extends BaseEuiView {
 
 	protected childrenCreated(): void {
 		super.childrenCreated();
+		SoundManager.ins().playBg('mh_mp3');
 		this.addTouchEvent(this.btnStart, () => {
 			let vms = ViewManager.ins();
 			vms.close(this);

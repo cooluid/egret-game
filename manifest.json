@@ -54,7 +54,7 @@
 		"bin-debug/core/utils/Debug.js",
 		"bin-debug/core/utils/DebugUtils.js",
 		"bin-debug/core/utils/DeviceUtils.js",
-		"bin-debug/LoadingUI.js",
+		"bin-debug/game/tips/TipsView.js",
 		"bin-debug/core/utils/ErrorLog.js",
 		"bin-debug/core/utils/KeyboardUtils.js",
 		"bin-debug/core/utils/KeyCode.js",
@@ -99,6 +99,6 @@
 		"bin-debug/game/module/nostop/NostopWin.js",
 		"bin-debug/game/tips/TipsControl.js",
 		"bin-debug/game/tips/TipsItem.js",
-		"bin-debug/game/tips/TipsView.js"
+		"bin-debug/LoadingUI.js"
 	]
 }
